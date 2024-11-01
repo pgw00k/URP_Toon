@@ -15,8 +15,8 @@ namespace JTRP.CustomAssetPostprocessor
         {
             [ReadOnly] public NativeArray<Vector3> normals, vertrx;
             [NativeDisableContainerSafetyRestriction]
-            public NativeArray<UnsafeHashMap<Vector3, Vector3>.ParallelWriter> result;
-            public CollectNormalJob(NativeArray<Vector3> normals, NativeArray<Vector3> vertrx, NativeArray<UnsafeHashMap<Vector3, Vector3>.ParallelWriter> result)
+            public NativeArray<UnsafeParallelHashMap<Vector3, Vector3>.ParallelWriter> result;
+            public CollectNormalJob(NativeArray<Vector3> normals, NativeArray<Vector3> vertrx, NativeArray<UnsafeParallelHashMap<Vector3, Vector3>.ParallelWriter> result)
             {
                 this.normals = normals;
                 this.vertrx = vertrx;
@@ -48,10 +48,10 @@ namespace JTRP.CustomAssetPostprocessor
             [ReadOnly] public NativeArray<Vector3> vertrx, normals;
             [ReadOnly] public NativeArray<Vector4> tangents;
             [NativeDisableContainerSafetyRestriction]
-            [ReadOnly] public NativeArray<UnsafeHashMap<Vector3, Vector3>> result;
+            [ReadOnly] public NativeArray<UnsafeParallelHashMap<Vector3, Vector3>> result;
             [WriteOnly] public NativeArray<Vector2> uv8;
 
-            public BakeNormalJob(NativeArray<Vector3> vertrx, NativeArray<Vector3> normals, NativeArray<Vector4> tangents, NativeArray<UnsafeHashMap<Vector3, Vector3>> result, NativeArray<Vector2> uv8)
+            public BakeNormalJob(NativeArray<Vector3> vertrx, NativeArray<Vector3> normals, NativeArray<Vector4> tangents, NativeArray<UnsafeParallelHashMap<Vector3, Vector3>> result, NativeArray<Vector2> uv8)
             {
                 this.vertrx = vertrx;
                 this.normals = normals;
@@ -166,8 +166,8 @@ namespace JTRP.CustomAssetPostprocessor
             NativeArray<Vector3> normals = new NativeArray<Vector3>(smoothedMesh.normals, Allocator.Persistent),
                 vertrx = new NativeArray<Vector3>(smoothedMesh.vertices, Allocator.Persistent),
                 smoothedNormals = new NativeArray<Vector3>(svc, Allocator.Persistent);
-            var result = new NativeArray<UnsafeHashMap<Vector3, Vector3>>(maxOverlapvertices, Allocator.Persistent);
-            var resultParallel = new NativeArray<UnsafeHashMap<Vector3, Vector3>.ParallelWriter>(result.Length, Allocator.Persistent);
+            var result = new NativeArray<UnsafeParallelHashMap<Vector3, Vector3>>(maxOverlapvertices, Allocator.Persistent);
+            var resultParallel = new NativeArray<UnsafeParallelHashMap<Vector3, Vector3>.ParallelWriter>(result.Length, Allocator.Persistent);
             // NormalBakeJob Data
             NativeArray<Vector3> normalsO = new NativeArray<Vector3>(originalMesh.normals, Allocator.Persistent),
                 vertrxO = new NativeArray<Vector3>(originalMesh.vertices, Allocator.Persistent);
@@ -176,7 +176,7 @@ namespace JTRP.CustomAssetPostprocessor
 
             for (int i = 0; i < result.Length; i++)
             {
-                result[i] = new UnsafeHashMap<Vector3, Vector3>(svc, Allocator.Persistent);
+                result[i] = new UnsafeParallelHashMap<Vector3, Vector3>(svc, Allocator.Persistent);
                 resultParallel[i] = result[i].AsParallelWriter();
             }
 
