@@ -9,13 +9,26 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: ChiliMilk_Face
   m_Shader: {fileID: 4800000, guid: 1d6e561d2a2bdae46a0884077d1708ba, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - _ENVIRONMENTREFLECTIONS_OFF
   - _RECEIVE_SHADOWS_OFF
   - _SDFSHADOWMAP
   - _SPECULARHIGHLIGHTS_OFF
   - _SPECULAR_SETUP
-  m_InvalidKeywords: []
+  m_InvalidKeywords:
+  - _ALPHACLIP_OFF
+  - _CASTHAIRSHADOWMASK_OFF
+  - _ENABLEMATCAP_OFF
+  - _ENABLEOUTLINE_OFF
+  - _ENABLESTENCIL_OFF
+  - _INVERSECLIPMASK_OFF
+  - _RECEIVEHAIRSHADOWMASK_OFF
+  - _RECEIVESHADOWS_OFF
+  - _RIMFLIP_OFF
+  - _SPECULARTYPE_OFF
+  - _USESMOOTHNORMAL_OFF
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -25,6 +38,7 @@ Material:
   disabledShaderPasses:
   - HairShadowMask
   - Outline
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -113,7 +127,10 @@ Material:
     - _ReceiveHairShadowOffset: 1
     - _ReceiveShadows: 0
     - _RenderQueue: 2000
+    - _RimBlendLdotV: 0
+    - _RimBlendShadow: 0
     - _RimFeather: 0
+    - _RimFlip: 0
     - _RimPow: 4
     - _RimStep: 0.5
     - _SDFShadowOffset: 0
@@ -132,6 +149,7 @@ Material:
     - _SpecularShift2: 0
     - _SpecularShiftIntensity: 1
     - _SpecularStep: 0.459
+    - _SpecularType: 0
     - _SrcBlend: 1
     - _StencilComp: 0
     - _StencilOp: 0
@@ -144,6 +162,7 @@ Material:
     - _BaseColor: {r: 0.7169812, g: 0.7169812, b: 0.7169812, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _ForwardDirWS: {r: 0, g: -0.00000011920929, b: -1.0000001, a: 0}
+    - _LdotFL: {r: 0.85716736, g: -0.515038, b: 0, a: 0}
     - _LeftDirWS: {r: 1, g: 0, b: 0, a: 0}
     - _MatCapColor: {r: 0, g: 0, b: 0, a: 0}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 0}
@@ -152,3 +171,4 @@ Material:
     - _Shadow2Color: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
+  m_AllowLocking: 1

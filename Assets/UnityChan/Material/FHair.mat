@@ -22,9 +22,10 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: FHair
   m_Shader: {fileID: 4800000, guid: 1d6e561d2a2bdae46a0884077d1708ba, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - _ENVIRONMENTREFLECTIONS_OFF
-  - _HAIRSPECULAR
   - _NORMALMAP
   - _SPECULAR_SETUP
   - _USESMOOTHNORMAL
@@ -36,6 +37,7 @@ Material:
   stringTagMap:
     RenderType: Opaque
   disabledShaderPasses: []
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -125,7 +127,10 @@ Material:
     - _ReceiveHairShadowOffset: 1
     - _ReceiveShadows: 1
     - _RenderQueue: 2452
+    - _RimBlendLdotV: 0
+    - _RimBlendShadow: 0
     - _RimFeather: 0.298
+    - _RimFlip: 0
     - _RimPow: 4
     - _RimStep: 0.3
     - _SSAOStrength: 1
@@ -143,6 +148,7 @@ Material:
     - _SpecularShift2: -0.115
     - _SpecularShiftIntensity: 0.7
     - _SpecularStep: 0.795
+    - _SpecularType: 0
     - _SrcBlend: 1
     - _StencilComp: 6
     - _StencilOp: 0
@@ -155,6 +161,7 @@ Material:
     - _BaseColor: {r: 0.8, g: 0.8, b: 0.8, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _ForwardDirWS: {r: 0, g: 0, b: 0, a: 1}
+    - _LdotFL: {r: 0, g: 0, b: 0, a: 0}
     - _LeftDirWS: {r: -1, g: 0, b: 0, a: 0}
     - _MatCapColor: {r: 0, g: 0, b: 0, a: 0}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
@@ -163,3 +170,4 @@ Material:
     - _Shadow2Color: {r: 0.5283019, g: 0.5283019, b: 0.5283019, a: 0}
     - _SpecColor: {r: 0.2924528, g: 0.19796805, b: 0, a: 1}
   m_BuildTextureStacks: []
+  m_AllowLocking: 1
